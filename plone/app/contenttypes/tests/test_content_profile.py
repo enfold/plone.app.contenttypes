@@ -93,7 +93,7 @@ class ContentProfileTestCase(unittest.TestCase):
         self.assertTrue(assignable_manager.getBlacklistStatus('context'))
         self.assertTrue(assignable_manager.getBlacklistStatus('group'))
         self.assertTrue(assignable_manager.getBlacklistStatus('content_type'))
-        
+
     def test_Members_is_private(self):
         # Is the content object public?
         obj = self.portal['Members']
@@ -174,5 +174,5 @@ class ContentProfileTestCase(unittest.TestCase):
         collection = self.portal['news']['aggregator']
         self.assertEqual(collection.sort_on, u'effective')
         self.assertEqual(collection.sort_reversed, True)
-        self.assertItemsEqual(collection.query, query)
+        self.assertEqual(collection.query, query)
         self.assertEqual(collection.getLayout(), 'summary_view')
